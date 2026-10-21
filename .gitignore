@@ -1,0 +1,27 @@
+# Local Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# KiCad lock, backup and per-user editor settings
+*-backups/
+*.lck
+*.kicad_prl
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_pro-bak
+*-rescue.kicad_sch
+
+# Editor / OS state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local temporary files (original evidence outputs are intentionally tracked)
+*.tmp
+*.swp
+*~

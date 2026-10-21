@@ -1,0 +1,28 @@
+LTspice 26.0.2 for Windows
+Circuit: <LOCAL_DESKTOP>\ThermoBench_LTspice.cir
+Start Time: Wed Oct 21 03:37:27 2026
+
+.step tc=25
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+
+.step tc=26
+Direct Newton iteration succeeded in finding operating point.
+
+.step tc=27
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.242 seconds.
+
+Files loaded:
+<LOCAL_DESKTOP>\ThermoBench_LTspice.cir
+
+
+Measurement: v_adc
+  step	V(ADC) 	at
+     1	1.61453080177	0.009
+     2	1.57910299301	0.009
+     3	1.54393148422	0.009

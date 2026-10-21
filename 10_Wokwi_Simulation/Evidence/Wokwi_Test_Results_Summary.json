@@ -1,0 +1,60 @@
+{
+  "source": "User-shared Wokwi serial monitor transcripts, 2026-10-21",
+  "nature": "Virtual ESP32 + Wokwi NTC module, not physical board data",
+  "period_ms": 200,
+  "setpoint_observed": {
+    "25C": {
+      "mv": 1650.4,
+      "temp_c": 24.989,
+      "status": "NORMAL"
+    },
+    "35C": {
+      "mv": 1300.66,
+      "temp_c": 35.0,
+      "status": "NORMAL"
+    },
+    "46C": {
+      "mv": 973.48,
+      "temp_c": 45.987,
+      "status": "HOT"
+    }
+  },
+  "hysteresis": {
+    "activation_observed": {
+      "temp_c": 45.386,
+      "status": "HOT",
+      "ms": 11910,
+      "session": "B"
+    },
+    "hold_44C": {
+      "temp_c": 44.003,
+      "status": "HOT",
+      "ms": 21310,
+      "session": "C"
+    },
+    "above_reset": {
+      "temp_c": 43.112,
+      "status": "HOT",
+      "ms": 27310,
+      "session": "C"
+    },
+    "reset": {
+      "temp_c": 42.998,
+      "status": "NORMAL",
+      "ms": 27510,
+      "session": "C"
+    }
+  },
+  "other_observations": {
+    "out_of_range_peak_c": 63.304,
+    "out_of_range_label": "OUT_OF_RANGE",
+    "recovery_to_25_c": 24.989
+  },
+  "notes": [
+    "Curated exact logged values across three sessions, not complete raw serial export",
+    "Actual analog R1/R2/C1 PCB not modeled in Wokwi",
+    "Over-range event appears during large temperature-setting change and clears HOT latch in current sketch",
+    "No observed low-voltage or high-voltage injected fault test in these logs",
+    "Absolute real hardware accuracy remains unverified"
+  ]
+}

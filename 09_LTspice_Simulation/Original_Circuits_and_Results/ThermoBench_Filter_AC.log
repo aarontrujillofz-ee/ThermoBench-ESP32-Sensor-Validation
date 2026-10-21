@@ -1,0 +1,14 @@
+LTspice 26.0.2 for Windows
+Circuit: <LOCAL_DESKTOP>\ThermoBench_Filter_AC.cir
+Start Time: Wed Oct 21 03:30:48 2026
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 0.020 seconds.
+
+Files loaded:
+<LOCAL_DESKTOP>\ThermoBench_Filter_AC.cir
+

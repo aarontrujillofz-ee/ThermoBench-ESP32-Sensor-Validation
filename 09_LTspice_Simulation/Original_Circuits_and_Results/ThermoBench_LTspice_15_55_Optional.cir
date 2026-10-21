@@ -1,0 +1,28 @@
+
+* ThermoBench - NTC Temperature Sensor
+* DC behavior and stepped temperature simulation
+
+.param TC=25
+.param R25=10000
+.param BETA=3950
+
+* ESP32 power supply
+V1 VCC 0 3.2
+
+* Voltage divider
+R1 VCC SENSE 9.82k
+RNTC SENSE 0 {R25*exp(BETA*(1/(TC+273.15)-1/298.15))}
+
+* ADC input filter
+R2 SENSE ADC 990
+C1 ADC 0 100n
+
+* Simulate 15, 25, 35, 45, and 55 C
+.step param TC list 15 25 35 45 55
+
+.tran 0 10m
+
+* Measure each ADC voltage
+.meas tran V_ADC FIND V(ADC) AT=9m
+
+.end

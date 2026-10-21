@@ -1,0 +1,3 @@
+These user-exported Gerber layer files are archived for CAD documentation only.
+No manufacturing readiness is claimed. Physical component fit and screw clearances are unverified, and no validated Excellon drill files were found in the uploaded KiCad ZIP.
+Regenerate all fabrication layers and drill files from the final verified native KiCad PCB if a board will ever be ordered.

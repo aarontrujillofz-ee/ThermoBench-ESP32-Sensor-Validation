@@ -1,0 +1,90 @@
+{
+  "source": "Original hardware CSVs in Hardware_Data; computed using pandas / numpy",
+  "notes": "Temperature numbers are ESP32 firmware model estimates, not reference-calibrated readings.",
+  "datasets": [
+    {
+      "file": "hardware_20261019_224727_796590.csv",
+      "samples": 16,
+      "duration_s": 3.0,
+      "sample_interval_ms_unique": [
+        200
+      ],
+      "temperature_mean_c": 29.1011,
+      "temperature_sd_c": 0.1479,
+      "temperature_min_c": 28.88,
+      "temperature_max_c": 29.308,
+      "temperature_start_c": 29.283,
+      "temperature_end_c": 28.883,
+      "voltage_mean_mv": 1466.406,
+      "voltage_sd_mv": 5.0672,
+      "all_status_normal": true,
+      "source_hardware": true,
+      "peak_time_s": 0.2,
+      "first20_temperature_mean_c": 29.1011,
+      "first20_temperature_sd_c": 0.1479
+    },
+    {
+      "file": "hardware_20261019_224752_255773.csv",
+      "samples": 133,
+      "duration_s": 26.4,
+      "sample_interval_ms_unique": [
+        200
+      ],
+      "temperature_mean_c": 29.5673,
+      "temperature_sd_c": 1.7816,
+      "temperature_min_c": 26.22,
+      "temperature_max_c": 31.766,
+      "temperature_start_c": 26.49,
+      "temperature_end_c": 30.641,
+      "voltage_mean_mv": 1451.015,
+      "voltage_sd_mv": 61.1799,
+      "all_status_normal": true,
+      "source_hardware": true,
+      "peak_time_s": 20.4,
+      "first20_temperature_mean_c": 29.0796,
+      "first20_temperature_sd_c": 1.7792
+    },
+    {
+      "file": "hardware_20261019_234715_916346.csv",
+      "samples": 641,
+      "duration_s": 128.0,
+      "sample_interval_ms_unique": [
+        200
+      ],
+      "temperature_mean_c": 22.3765,
+      "temperature_sd_c": 0.0412,
+      "temperature_min_c": 22.227,
+      "temperature_max_c": 22.503,
+      "temperature_start_c": 22.348,
+      "temperature_end_c": 22.427,
+      "voltage_mean_mv": 1703.112,
+      "voltage_sd_mv": 1.4797,
+      "all_status_normal": true,
+      "source_hardware": true,
+      "peak_time_s": 127.6,
+      "first20_temperature_mean_c": 22.3714,
+      "first20_temperature_sd_c": 0.0345
+    },
+    {
+      "file": "hardware_20261019_235231_403927.csv",
+      "samples": 544,
+      "duration_s": 108.6,
+      "sample_interval_ms_unique": [
+        200
+      ],
+      "temperature_mean_c": 26.5838,
+      "temperature_sd_c": 2.9849,
+      "temperature_min_c": 22.423,
+      "temperature_max_c": 30.829,
+      "temperature_start_c": 22.535,
+      "temperature_end_c": 24.661,
+      "voltage_mean_mv": 1554.865,
+      "voltage_sd_mv": 104.4718,
+      "all_status_normal": true,
+      "source_hardware": true,
+      "peak_time_s": 57.2,
+      "first20_temperature_mean_c": 22.5134,
+      "first20_temperature_sd_c": 0.032
+    }
+  ]
+}

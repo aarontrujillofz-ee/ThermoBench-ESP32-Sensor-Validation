@@ -1,0 +1,1 @@
+Source: Serial-monitor text supplied by the user in this ChatGPT conversation on 2026-10-21. Curated EXACT rows, NOT the complete serial log; no omitted rows should be inferred. Three testing sessions are labeled A/B/C because their timestamps reset between runs. Measurements are VIRTUAL Wokwi model values, NOT physical sensor data. All values transcribed without interpolation.

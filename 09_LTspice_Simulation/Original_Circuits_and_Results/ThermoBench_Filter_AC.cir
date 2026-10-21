@@ -1,0 +1,12 @@
+
+* ThermoBench - AC Filter Analysis
+* NTC at nominal 25 C
+
+V1 VCC 0 DC 3.2 AC 1
+R1 VCC SENSE 9.82k
+RNTC SENSE 0 10k
+R2 SENSE ADC 990
+C1 ADC 0 100n
+
+.ac dec 100 1 100k
+.end

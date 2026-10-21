@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "ThermoBench engineering project - prepared demonstrator",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 10,
+      "left": -160,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ntc-temperature-sensor",
+      "id": "ntc1",
+      "top": -20,
+      "left": 110,
+      "rotate": 90,
+      "attrs": {
+        "temperature": "25",
+        "beta": "3950"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "ntc1:VCC",
+      "esp:3V3",
+      "red",
+      []
+    ],
+    [
+      "ntc1:GND",
+      "esp:GND.1",
+      "black",
+      []
+    ],
+    [
+      "ntc1:OUT",
+      "esp:D34",
+      "green",
+      []
+    ],
+    [
+      "esp:TX0",
+      "$serialMonitor:RX",
+      "",
+      []
+    ],
+    [
+      "esp:RX0",
+      "$serialMonitor:TX",
+      "",
+      []
+    ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,57 @@
+session,ms,mv,temp_c,status,context
+A_25_to_35_C,510,1650.4,24.989,NORMAL,initial
+A_25_to_35_C,16510,1650.4,24.989,NORMAL,before slider response
+A_25_to_35_C,16910,1303.88,34.902,NORMAL,changed sensor setting
+A_25_to_35_C,17110,1303.88,34.902,NORMAL,transition
+A_25_to_35_C,17310,1300.66,35.0,NORMAL,35C stabilized
+A_25_to_35_C,19110,1300.66,35.0,NORMAL,35C hold
+A_25_to_35_C,27310,1300.66,35.0,NORMAL,35C hold
+B_46_C_and_recovery,510,1650.4,24.989,NORMAL,baseline
+B_46_C_and_recovery,11310,1104.84,41.295,NORMAL,warming
+B_46_C_and_recovery,11710,1027.47,44.003,NORMAL,below alarm threshold
+B_46_C_and_recovery,11910,989.6,45.386,HOT,alarm activation
+B_46_C_and_recovery,12110,951.72,46.812,HOT,transient overshoot
+B_46_C_and_recovery,14910,973.48,45.987,HOT,46C hold
+B_46_C_and_recovery,34310,973.48,45.987,HOT,prior to cooling
+B_46_C_and_recovery,34710,1106.75,41.23,NORMAL,alarm cleared
+B_46_C_and_recovery,34910,1278.1,35.692,NORMAL,cooling
+B_46_C_and_recovery,35110,1415.09,31.594,NORMAL,cooling
+B_46_C_and_recovery,35310,1463.44,30.2,NORMAL,cooling
+B_46_C_and_recovery,37110,1865.57,19.201,NORMAL,cooling transient
+B_46_C_and_recovery,37310,1917.95,17.803,NORMAL,undershoot
+B_46_C_and_recovery,38110,1712.45,23.305,NORMAL,recovery
+B_46_C_and_recovery,38710,1660.88,24.704,NORMAL,recovery
+B_46_C_and_recovery,39910,1652.01,24.945,NORMAL,recovery
+B_46_C_and_recovery,40110,1650.4,24.989,NORMAL,25C return
+B_46_C_and_recovery,47510,1650.4,24.989,NORMAL,25C hold
+C_hysteresis_and_range,510,1650.4,24.989,NORMAL,baseline
+C_hysteresis_and_range,2310,1066.96,42.602,NORMAL,heating
+C_hysteresis_and_range,2510,817.14,52.301,HOT,above 45C
+C_hysteresis_and_range,2710,620.51,62.007,OUT_OF_RANGE,beyond configured range
+C_hysteresis_and_range,2910,597.95,63.304,OUT_OF_RANGE,over-range high
+C_hysteresis_and_range,3910,672.09,59.207,OUT_OF_RANGE,over-range
+C_hysteresis_and_range,4510,699.49,57.802,OUT_OF_RANGE,over-range
+C_hysteresis_and_range,6110,727.69,56.41,OUT_OF_RANGE,over-range
+C_hysteresis_and_range,6310,755.09,55.104,OUT_OF_RANGE,just above upper limit
+C_hysteresis_and_range,6510,785.71,53.696,HOT,back within range
+C_hysteresis_and_range,6910,951.72,46.812,HOT,hot state
+C_hysteresis_and_range,9710,973.48,45.987,HOT,46C hold
+C_hysteresis_and_range,17710,975.9,45.897,HOT,cooling starts
+C_hysteresis_and_range,18510,989.6,45.386,HOT,cooling
+C_hysteresis_and_range,19110,999.32,45.027,HOT,above 45C
+C_hysteresis_and_range,19310,1002.49,44.91,HOT,hysteresis band
+C_hysteresis_and_range,20110,1013.77,44.498,HOT,hysteresis band
+C_hysteresis_and_range,20910,1025.05,44.09,HOT,hysteresis band
+C_hysteresis_and_range,21310,1027.47,44.003,HOT,44C hold
+C_hysteresis_and_range,21910,1027.47,44.003,HOT,44C hold
+C_hysteresis_and_range,23110,1027.47,44.003,HOT,44C hold
+C_hysteresis_and_range,25110,1027.47,44.003,HOT,44C hold
+C_hysteresis_and_range,25710,1027.47,44.003,HOT,last 44C hold
+C_hysteresis_and_range,25910,1028.28,43.974,HOT,cool below 44C
+C_hysteresis_and_range,26310,1035.53,43.713,HOT,hysteresis band
+C_hysteresis_and_range,26910,1046.66,43.317,HOT,hysteresis band
+C_hysteresis_and_range,27310,1052.45,43.112,HOT,just above reset
+C_hysteresis_and_range,27510,1055.68,42.998,NORMAL,reset at or below 43C
+C_hysteresis_and_range,28110,1066.66,42.613,NORMAL,cooling
+C_hysteresis_and_range,29310,1084.69,41.986,NORMAL,42C hold
+C_hysteresis_and_range,32510,1084.69,41.986,NORMAL,42C hold

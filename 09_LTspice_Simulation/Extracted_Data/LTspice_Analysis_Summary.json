@@ -1,0 +1,41 @@
+{
+  "source_files": [
+    "ThermoBench_LTspice.raw",
+    "ThermoBench_LTspice.log",
+    "ThermoBench_Filter_AC.raw"
+  ],
+  "nominal": {
+    "supply_v": 3.2,
+    "r1_ohm": 9820,
+    "ntc_r25_ohm": 10000,
+    "ntc_beta_kelvin": 3950,
+    "r2_ohm": 990,
+    "c1_f": 1e-07
+  },
+  "ltspice_temperature_steps": [
+    {
+      "temperature_c": 25,
+      "v_adc": 1.6145308017730713
+    },
+    {
+      "temperature_c": 26,
+      "v_adc": 1.5791029930114746
+    },
+    {
+      "temperature_c": 27,
+      "v_adc": 1.543931484222412
+    }
+  ],
+  "ac": {
+    "point_count": 501,
+    "freq_low_hz": 1.0,
+    "freq_high_hz": 100000.0,
+    "low_frequency_gain_db_approx": -5.942073002985131,
+    "calculated_cutoff_hz": 267.73067225940923,
+    "extracted_gain_at_cutoff_db": -8.952576961402759
+  },
+  "hardware_comparison": {
+    "earlier_dmm_adc_node_v_approx": 1.58,
+    "interpretation": "Model voltage near 26 deg C is consistent with 1.58 V. No independent thermometer, controlled simultaneous conditions, or absolute temperature calibration. Avoid validation-by-selected-model-temperature."
+  }
+}
