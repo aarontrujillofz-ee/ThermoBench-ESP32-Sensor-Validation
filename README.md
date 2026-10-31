@@ -23,6 +23,7 @@ ThermoBench is an electrical engineering portfolio project that combines an ESP3
 | **Engineering calculations** | [Step-by-step calculations](docs/calculations.md) | NTC model, voltage divider, RC filter, ADC, and testing results |
 | **Real measurements** | [Physical CSV files](05_Hardware_CSV/) | Recorded breadboard data — not simulations |
 | **Graphs and results** | [Analysis figures](06_Analysis/) / [Temperature response](06_Analysis/thermal_response.png) | Visualizations derived from analysis |
+| **Results and validation guide** | [Measurement and graph walkthrough](docs/results-validation-guide.md) | Original hardware data, verified statistics, figures and evidence limitations |
 | **LTspice circuit simulation** | [Simulation sources](09_LTspice_Simulation/) / [Simulation guide](09_LTspice_Simulation/README_LTspice.md) | Original netlists, response plots, and evidence |
 | **Wokwi firmware simulation** | [Wokwi project files](10_Wokwi_Simulation/) / [Test cases](10_Wokwi_Simulation/WOKWI_TEST_CASES.md) | Virtual sensor firmware behavior, observed cases, and figures |
 | **Other figures** | [Figures & schematics index](FIGURES_AND_SCHEMATICS_INDEX.md) | More reference images and documents |
