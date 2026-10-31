@@ -19,6 +19,7 @@ ThermoBench is an electrical engineering portfolio project that combines an ESP3
 | **Hardware and PCB walkthrough** | [Component and PCB guide](docs/hardware-pcb-guide.md) | Component functions, wiring, connectors, test points, and PCB design |
 | **ESP32 firmware** | [thermobench.ino](04_Firmware_and_Python/thermobench.ino) | Microcontroller source code |
 | **Python scripts** | [Source folder](04_Firmware_and_Python/) / [Build instructions](04_Firmware_and_Python/BUILD_STEPS.md) | Data processing, dashboard, reporting, and tests |
+| **Firmware & Python walkthrough** | [Code guide](docs/firmware-python-guide.md) | ESP32 firmware, Python dashboard, CSV analysis, unit tests and limitations |
 | **Engineering calculations** | [Step-by-step calculations](docs/calculations.md) | NTC model, voltage divider, RC filter, ADC, and testing results |
 | **Real measurements** | [Physical CSV files](05_Hardware_CSV/) | Recorded breadboard data — not simulations |
 | **Graphs and results** | [Analysis figures](06_Analysis/) / [Temperature response](06_Analysis/thermal_response.png) | Visualizations derived from analysis |
