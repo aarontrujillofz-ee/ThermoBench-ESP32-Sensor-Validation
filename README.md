@@ -11,22 +11,17 @@ ThermoBench is an electrical engineering portfolio project that combines an ESP3
 ## Quick access — find the files
 
 | What you need | Direct link | What it contains |
-|---|---|---|
-| **Final engineering report** | [Read the 23-page PDF](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) | Project design, tests, results, assumptions, and limitations |
-| **Project presentation** | [Interview study guide](01_Report/ThermoBench_Interview_Study_Guide.pdf) | Short technical explanation and presentation notes |
-| **Circuit schematic** | [View schematic PDF](03_CAD_Visuals/KiCad_Schematic_Original_A4.pdf) / [KiCad source](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_sch) | Actual circuit drawing and editable schematic |
-| **PCB design** | [KiCad PCB](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pcb) / [3D top view](03_CAD_Visuals/3D_Top_Original.png) | Routed PCB design and visual render |
-| **Hardware and PCB walkthrough** | [Component and PCB guide](docs/hardware-pcb-guide.md) | Component functions, wiring, connectors, test points, and PCB design |
-| **ESP32 firmware** | [thermobench.ino](04_Firmware_and_Python/thermobench.ino) | Microcontroller source code |
-| **Python scripts** | [Source folder](04_Firmware_and_Python/) / [Build instructions](04_Firmware_and_Python/BUILD_STEPS.md) | Data processing, dashboard, reporting, and tests |
-| **Firmware & Python walkthrough** | [Code guide](docs/firmware-python-guide.md) | ESP32 firmware, Python dashboard, CSV analysis, unit tests and limitations |
-| **Engineering calculations** | [Step-by-step calculations](docs/calculations.md) | NTC model, voltage divider, RC filter, ADC, and testing results |
-| **Real measurements** | [Physical CSV files](05_Hardware_CSV/) | Recorded breadboard data — not simulations |
-| **Graphs and results** | [Analysis figures](06_Analysis/) / [Temperature response](06_Analysis/thermal_response.png) | Visualizations derived from analysis |
-| **Results and validation guide** | [Measurement and graph walkthrough](docs/results-validation-guide.md) | Original hardware data, verified statistics, figures and evidence limitations |
-| **LTspice circuit simulation** | [Simulation sources](09_LTspice_Simulation/) / [Simulation guide](09_LTspice_Simulation/README_LTspice.md) | Original netlists, response plots, and evidence |
-| **Wokwi firmware simulation** | [Wokwi project files](10_Wokwi_Simulation/) / [Test cases](10_Wokwi_Simulation/WOKWI_TEST_CASES.md) | Virtual sensor firmware behavior, observed cases, and figures |
-| **Other figures** | [Figures & schematics index](FIGURES_AND_SCHEMATICS_INDEX.md) | More reference images and documents |
+| --- | --- | --- |
+| **Final report** | [23-page PDF](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) | Start here for the complete project |
+| **Circuit schematic** | [View PDF](03_CAD_Visuals/KiCad_Schematic_Original_A4.pdf) | Review the external analog circuit |
+| **PCB design** | [KiCad board](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pcb) / [3D render](03_CAD_Visuals/3D_Angled_Original.png) | Designed, not fabricated |
+| **ESP32 firmware** | [thermobench.ino](04_Firmware_and_Python/thermobench.ino) | Embedded source code |
+| **Python code** | [Python folder](04_Firmware_and_Python/) / [Code walkthrough](docs/firmware-python-guide.md) | Dashboard, CSV parsing and tests |
+| **Calculations** | [Worked calculations](docs/calculations.md) | NTC, voltage divider, RC filter, ADC |
+| **Graphs and results** | [Thermal response](06_Analysis/thermal_response.png) / [Results guide](docs/results-validation-guide.md) | Physical-recording analysis |
+| **Original measurements** | [Four hardware CSV files](05_Hardware_CSV/) | 1,334 archived physical rows |
+| **Simulations** | [LTspice](09_LTspice_Simulation/) / [Wokwi](10_Wokwi_Simulation/) | Different virtual models, not physical proof |
+| **All project files** | [Complete file index](docs/file-index.md) | Reports, schematics, PCB, code, images, tests and history |
 
 ## Project in 60 seconds
 
