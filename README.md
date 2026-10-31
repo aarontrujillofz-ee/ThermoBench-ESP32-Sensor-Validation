@@ -16,6 +16,7 @@ ThermoBench is an electrical engineering portfolio project that combines an ESP3
 | **Project presentation** | [Interview study guide](01_Report/ThermoBench_Interview_Study_Guide.pdf) | Short technical explanation and presentation notes |
 | **Circuit schematic** | [View schematic PDF](03_CAD_Visuals/KiCad_Schematic_Original_A4.pdf) / [KiCad source](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_sch) | Actual circuit drawing and editable schematic |
 | **PCB design** | [KiCad PCB](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pcb) / [3D top view](03_CAD_Visuals/3D_Top_Original.png) | Routed PCB design and visual render |
+| **Hardware and PCB walkthrough** | [Component and PCB guide](docs/hardware-pcb-guide.md) | Component functions, wiring, connectors, test points, and PCB design |
 | **ESP32 firmware** | [thermobench.ino](04_Firmware_and_Python/thermobench.ino) | Microcontroller source code |
 | **Python scripts** | [Source folder](04_Firmware_and_Python/) / [Build instructions](04_Firmware_and_Python/BUILD_STEPS.md) | Data processing, dashboard, reporting, and tests |
 | **Engineering calculations** | [Step-by-step calculations](docs/calculations.md) | NTC model, voltage divider, RC filter, ADC, and testing results |
