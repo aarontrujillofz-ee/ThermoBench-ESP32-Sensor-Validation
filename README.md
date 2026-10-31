@@ -1,57 +1,92 @@
-# ThermoBench — ESP32 Temperature Sensing & Validation
+# ThermoBench | ESP32 Temperature Sensing & Hardware Validation
 
-Engineering portfolio demonstrating embedded sensing, analog simulation, PCB design, hardware measurements, and temperature-alarm firmware validation.
+**Embedded systems · Analog circuits · PCB design · Python test automation**
 
-![KiCad PCB 3D model](03_CAD_Visuals/3D_Angled_Original.png)
+ThermoBench is an electrical engineering portfolio project that combines an ESP32 microcontroller, an NTC thermistor, analog signal conditioning, temperature monitoring, simulated fault scenarios, and analysis of real breadboard measurements. This repository provides the **engineering report, design files, source code, calculations, graphs, and test evidence**.
 
-## Key artifacts
+> **Project status:** Physical breadboard measurements documented · KiCad PCB designed but **not fabricated/tested** · LTspice and Wokwi are separate simulation environments · No claim of calibrated temperature accuracy.
 
-- **[Complete engineering report (23-page PDF)](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf)** — design, figures, measurements, limitations, LTspice and verified Wokwi tests.
-- **[Interview presentation guide](01_Report/ThermoBench_Interview_Study_Guide.pdf)** — short project explanation and speaking notes; the master report has the latest Wokwi test results.
-- **[Editable KiCad files](02_KiCad_Source/)** — schematic (`.kicad_sch`), project (`.kicad_pro`), and routed PCB (`.kicad_pcb`).
-- **[Embedded and Python source](04_Firmware_and_Python/)** — ESP32 sketch, Python dashboard, data processing and tests. Read its `BUILD_STEPS.md` first.
-- **[Physical test recordings](05_Hardware_CSV/)** and **[derived measurements/plots](06_Analysis/)**.
-- **[LTspice simulation](09_LTspice_Simulation/)** — original circuit netlists, logs, raw results, and Bode/temperature figures.
-- **[Wokwi simulation](10_Wokwi_Simulation/)** — editable ESP32 `sketch.ino` + `diagram.json`, test cases, observed serial excerpts, and figures.
+![ThermoBench PCB 3D design](03_CAD_Visuals/3D_Angled_Original.png)
 
-## Hardware and firmware summary
+## Quick access — find the files
 
-An external NTC thermistor forms a voltage divider with **R1 = 9.82 kΩ**; **R2 = 990 Ω** and **C1 = 100 nF** provide an analog filter before the ESP32 ADC at GPIO34. The KiCad board measures **50 × 35 mm** and includes test points and two mounting holes.
+| What you need | Direct link | What it contains |
+|---|---|---|
+| **Final engineering report** | [Read the 23-page PDF](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) | Project design, tests, results, assumptions, and limitations |
+| **Project presentation** | [Interview study guide](01_Report/ThermoBench_Interview_Study_Guide.pdf) | Short technical explanation and presentation notes |
+| **Circuit schematic** | [View schematic PDF](03_CAD_Visuals/KiCad_Schematic_Original_A4.pdf) / [KiCad source](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_sch) | Actual circuit drawing and editable schematic |
+| **PCB design** | [KiCad PCB](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pcb) / [3D top view](03_CAD_Visuals/3D_Top_Original.png) | Routed PCB design and visual render |
+| **ESP32 firmware** | [thermobench.ino](04_Firmware_and_Python/thermobench.ino) | Microcontroller source code |
+| **Python scripts** | [Source folder](04_Firmware_and_Python/) / [Build instructions](04_Firmware_and_Python/BUILD_STEPS.md) | Data processing, dashboard, reporting, and tests |
+| **Calculations and methods** | [Engineering report](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) / [Analysis methodology](06_Analysis/Analysis_Methodology.md) | Existing analysis explanations; standalone worked-calculations page is a recommended next addition |
+| **Real measurements** | [Physical CSV files](05_Hardware_CSV/) | Recorded breadboard data — not simulations |
+| **Graphs and results** | [Analysis figures](06_Analysis/) / [Temperature response](06_Analysis/thermal_response.png) | Visualizations derived from analysis |
+| **LTspice circuit simulation** | [Simulation sources](09_LTspice_Simulation/) / [Simulation guide](09_LTspice_Simulation/README_LTspice.md) | Original netlists, response plots, and evidence |
+| **Wokwi firmware simulation** | [Wokwi project files](10_Wokwi_Simulation/) / [Test cases](10_Wokwi_Simulation/WOKWI_TEST_CASES.md) | Virtual sensor firmware behavior, observed cases, and figures |
+| **Other figures** | [Figures & schematics index](FIGURES_AND_SCHEMATICS_INDEX.md) | More reference images and documents |
 
-The separately labeled **Wokwi** model uses the simulator's three-pin NTC module with its **built-in** divider, rather than faithfully emulating the external KiCad R1/R2/C1 circuit. Use LTspice for analog response and Wokwi for virtual firmware behavior.
+## Project in 60 seconds
 
-### Wokwi evidence (user-run simulator)
+**Problem.** Measure temperature using an NTC thermistor and embedded ADC; record the readings and evaluate behavior under different conditions.
 
-| NTC setting / condition | Reported temperature | ADC voltage | State |
-|---|---:|---:|---|
-| Baseline ~25°C | 24.989°C | 1650.40 mV | NORMAL |
-| 35°C | 35.000°C | 1300.66 mV | NORMAL |
-| 46°C | 45.987°C | 973.48 mV | HOT |
-| Cooling, ~44°C | 44.003°C | 1027.47 mV | HOT |
-| Cooling, below 43°C | 42.998°C | 1055.68 mV | NORMAL |
+**Implementation.** The documented external analog interface uses **R1 = 9.82 kΩ**, **R2 = 990 Ω**, and **C1 = 100 nF** before the ESP32 input at **GPIO34**. The associated PCB design is **50 × 35 mm**.
 
-HOT activates at **45°C** and clears at **43°C** (2°C hysteresis). The recorded virtual over-range event reached **63.304°C** and set `OUT_OF_RANGE`; the current implementation clears the HOT latch during faults. See the report for observations and recommended changes. The Wokwi evidence CSV contains **selected transcribed log rows**, not a complete exported run.
+**Evidence.** The repository separates measurements from a **physical breadboard**, results from **LTspice analog circuit simulations**, and results from a **Wokwi ESP32 simulation**.
 
-![Wokwi hysteresis evidence](10_Wokwi_Simulation/Figures/Wokwi_Hysteresis_Verified.png)
+**Key limitation.** The Wokwi setup uses a three-pin NTC module with a *built-in divider*. It is **not** a faithful reproduction of the external KiCad R1/R2/C1 input circuit. The designed PCB has not been fabricated or validated on physical hardware.
 
-## How to open
+## Engineering walkthrough
 
-1. **KiCad 10:** Open `02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pro`.
-2. **LTspice:** Open the `.cir` netlists in `09_LTspice_Simulation/Original_Circuits_and_Results/` and run the simulation.
-3. **Wokwi:** Start a new [ESP32 project](https://wokwi.com/projects/new/esp32); replace `sketch.ino` and `diagram.json` with the files from `10_Wokwi_Simulation/`, then run.
-4. **Python:** Read `04_Firmware_and_Python/BUILD_STEPS.md` and `requirements.txt` before running `dashboard.py` or the tests.
+### 1 — Understand the circuit
 
-## Verification boundary
+Start with the [schematic PDF](03_CAD_Visuals/KiCad_Schematic_Original_A4.pdf), then review the [editable KiCad source files](02_KiCad_Source/). The external thermistor divider produces a temperature-dependent voltage that is conditioned before ADC sampling.
 
-- Breadboard sensor response, selected physical-data recordings and Wokwi alarm thresholds are documented; the physical prototype and simulator are **distinct test environments**.
-- The populated PCB was **not manufactured or physically tested**. KiCad DRC checks are not proof of mechanical fit or manufacturability.
-- The project does **not** establish calibrated absolute temperature accuracy. The LTspice 26°C comparison is model consistency, not calibrated validation.
-- `07_Reference_Exports/Preliminary_Gerbers` is **NOT FOR MANUFACTURING**.
-- `08_Synthetic_Demo_Only` contains clearly identified **synthetic** demonstrations, not hardware evidence.
-- Work was developed with **AI assistance**, including portions of the documentation and supporting scripts. Source, recorded observations, and limitations are provided for review.
+![Schematic detail](03_CAD_Visuals/Report_Figures/Schematic_Detail.png)
 
-See [README_START_HERE.md](README_START_HERE.md) for the complete original package map, and [FIGURES_AND_SCHEMATICS_INDEX.md](FIGURES_AND_SCHEMATICS_INDEX.md) for figures.
+### 2 — Review the design calculations
 
-## Publishing and license
+Use the [final report](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) and [analysis methodology](06_Analysis/Analysis_Methodology.md) for the currently documented analysis. A future `docs/calculations.md` should contain **clearly labeled worked examples** for the divider equation, NTC conversion, ADC scaling, and analog filter, with inputs, units, assumptions, and calculations independently checked against the implemented design. Do not substitute unverified theoretical results for measured data.
 
-This repository is published as a technical portfolio. No reuse license is granted by default; add a license if you intend to permit others to reuse the code/designs. Review screenshots, PDF metadata and local simulation logs for any details you do not want to share publicly.
+### 3 — Explore the PCB
+
+Open the [KiCad project](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pro), [PCB source](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pcb), and [3D view](03_CAD_Visuals/3D_Angled_Original.png). **Design files are not evidence of a manufactured or tested PCB.**
+
+### 4 — Follow the firmware and Python workflow
+
+Read [BUILD_STEPS.md](04_Firmware_and_Python/BUILD_STEPS.md) first. Review the [ESP32 sketch](04_Firmware_and_Python/thermobench.ino), [dashboard.py](04_Firmware_and_Python/dashboard.py), and [requirements.txt](04_Firmware_and_Python/requirements.txt). Hardware and Python requirements depend on which part of the project you want to reproduce.
+
+### 5 — Inspect measured results
+
+Review the [original breadboard CSV recordings](05_Hardware_CSV/), [analysis methodology](06_Analysis/Analysis_Methodology.md), and figures below. The graphs are presented as analysis outputs, not proof of external calibration accuracy.
+
+![Measured thermal response](06_Analysis/thermal_response.png)
+
+![Temperature versus voltage](06_Analysis/voltage_vs_temperature.png)
+
+### 6 — Review simulation evidence separately
+
+- [LTspice original circuit files and validation figures](09_LTspice_Simulation/) — analog circuit modeling.
+- [Wokwi test procedures](10_Wokwi_Simulation/WOKWI_TEST_CASES.md) and [observed evidence](10_Wokwi_Simulation/Evidence/) — firmware behavior in a different simulated circuit configuration.
+
+For the documented Wokwi firmware, the `HOT` state activates at **45°C** and clears at **43°C**. The available evidence includes selected transcribed simulator logs, not a full exported run. See the [verified Wokwi figure](10_Wokwi_Simulation/Figures/Wokwi_Hysteresis_Verified.png).
+
+## What was verified — and what remains open
+
+| Area | Evidence status |
+|---|---|
+| Breadboard sensing and recorded measurements | Physical measurement files included |
+| KiCad schematic and board layout | Design files and render included |
+| Manufactured PCB and assembled-board performance | **Not completed** |
+| LTspice analog circuit response | Simulation evidence included |
+| Wokwi alarm behavior | Selected simulator observations included |
+| Independently calibrated absolute temperature accuracy | **Not established** |
+| Preliminary Gerber exports | **Not for manufacturing**; see [notice](07_Reference_Exports/Preliminary_Gerbers/NOT_FOR_MANUFACTURING.txt) |
+| Synthetic example data | Explicitly separated under [Synthetic Demo Only](08_Synthetic_Demo_Only/) |
+
+## Notes and source provenance
+
+This project was developed with **AI assistance** for portions of documentation and supporting scripts; the underlying source and recorded evidence are supplied for inspection. Do not interpret model output, simulated data, or design-only PCB files as verified physical results.
+
+For the historical package map, see [README_START_HERE.md](README_START_HERE.md). For images and references, see [FIGURES_AND_SCHEMATICS_INDEX.md](FIGURES_AND_SCHEMATICS_INDEX.md).
+
+**Reuse rights:** This public portfolio repository does not currently grant an explicit reuse license. Review any private metadata or logs before publishing updates.
