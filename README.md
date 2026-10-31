@@ -18,7 +18,7 @@ ThermoBench is an electrical engineering portfolio project that combines an ESP3
 | **PCB design** | [KiCad PCB](02_KiCad_Source/ThermoBench_Sensor_Adapter.kicad_pcb) / [3D top view](03_CAD_Visuals/3D_Top_Original.png) | Routed PCB design and visual render |
 | **ESP32 firmware** | [thermobench.ino](04_Firmware_and_Python/thermobench.ino) | Microcontroller source code |
 | **Python scripts** | [Source folder](04_Firmware_and_Python/) / [Build instructions](04_Firmware_and_Python/BUILD_STEPS.md) | Data processing, dashboard, reporting, and tests |
-| **Calculations and methods** | [Engineering report](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) / [Analysis methodology](06_Analysis/Analysis_Methodology.md) | Existing analysis explanations; standalone worked-calculations page is a recommended next addition |
+| **Engineering calculations** | [Step-by-step calculations](docs/calculations.md) | NTC model, voltage divider, RC filter, ADC, and testing results |
 | **Real measurements** | [Physical CSV files](05_Hardware_CSV/) | Recorded breadboard data — not simulations |
 | **Graphs and results** | [Analysis figures](06_Analysis/) / [Temperature response](06_Analysis/thermal_response.png) | Visualizations derived from analysis |
 | **LTspice circuit simulation** | [Simulation sources](09_LTspice_Simulation/) / [Simulation guide](09_LTspice_Simulation/README_LTspice.md) | Original netlists, response plots, and evidence |
@@ -45,7 +45,7 @@ Start with the [schematic PDF](03_CAD_Visuals/KiCad_Schematic_Original_A4.pdf), 
 
 ### 2 — Review the design calculations
 
-Use the [final report](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) and [analysis methodology](06_Analysis/Analysis_Methodology.md) for the currently documented analysis. A future `docs/calculations.md` should contain **clearly labeled worked examples** for the divider equation, NTC conversion, ADC scaling, and analog filter, with inputs, units, assumptions, and calculations independently checked against the implemented design. Do not substitute unverified theoretical results for measured data.
+Use the [final report](01_Report/ThermoBench_Engineering_Design_and_Validation_Report.pdf) and [analysis methodology](06_Analysis/Analysis_Methodology.md) for the currently documented analysis. The [worked calculations guide](docs/calculations.md) contains **clearly labeled worked examples** for the divider equation, NTC conversion, ADC scaling, and analog filter, with inputs, units, assumptions, and calculations independently checked against the implemented design. Do not substitute unverified theoretical results for measured data.
 
 ### 3 — Explore the PCB
 
